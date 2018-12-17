@@ -21,19 +21,30 @@
 
 Créer le fichier src/main/resources/log4j2.xml
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<Configuration status="WARN">
-	  <Appenders>
-	    <Console name="Console" target="SYSTEM_OUT">
-	      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-	    </Console>
-	  </Appenders>
-	  <Loggers>
-	    <Root level="info">
-	      <AppenderRef ref="Console"/>
-	    </Root>
-	  </Loggers>
-	</Configuration>
+		<?xml version="1.0" encoding="UTF-8"?>
+		<Configuration status="WARN">
+			<Appenders>
+				<Console name="Console" target="SYSTEM_OUT">
+					<PatternLayout
+						pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+				</Console>
+
+				<File name="File" fileName="app.log" immediateFlush="false"
+					append="false">
+					<PatternLayout
+						pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+				</File>
+				
+			</Appenders>
+
+
+			<Loggers>
+				<Root level="info">
+					<AppenderRef ref="File" />
+					<AppenderRef ref="Console" />
+				</Root>
+			</Loggers>
+		</Configuration>
 
 3. Code java pour tester
 
