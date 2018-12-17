@@ -125,7 +125,7 @@
 
 
 
-		4. Java: @Entity classes
+		5. Java: @Entity classes
 		- Get sessionFactory
 			SessionFactory sessionFactory = (SessionFactory) ServletActionContext.getServletContext()
 				.getAttribute(HibernateListener.KEY_NANE)
@@ -173,3 +173,32 @@
 			}
 
 		}
+
+		6. Using Oracle 11
+
+		### Maven:
+
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0</version>
+		</dependency>
+
+		### hibernage.cf.xml
+
+			<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE hibernate-configuration PUBLIC
+			"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+			"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+			<hibernate-configuration>
+			 <session-factory>
+			  <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+			  <property name="hibernate.connection.url">jdbc:oracle:thin:@<ip>:<port>:my_db</property>
+			  <property name="hibernate.connection.username">mkyong</property>
+			  <property name="hibernate.connection.password">password</property>
+			  <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+			  <property name="hibernate.default_schema">my_db</property>
+			  <property name="show_sql">true</property>
+			  <mapping resource="com/mkyong/user/DBUser.hbm.xml"></mapping>
+			</session-factory>
+			</hibernate-configuration
