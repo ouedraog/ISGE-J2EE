@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 
+    <constant name="struts.devMode" value="true" />
+ 
+    <package name="main" extends="struts-default">
+
+		<!-- L'url hello sera traité par l'action HelloAction, la page retourné est hello.jsp -->
+        <action name="hello" class="com.isge.action.HelloAction">
+            <result name="success">/hello.jsp</result>
+        </action>
+    </package>
+ 
+</struts>
