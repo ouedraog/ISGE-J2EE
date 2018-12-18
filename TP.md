@@ -8,13 +8,15 @@ A l'ouverture il doit renseigner son nom, prénom, numéro de téléphone, adres
 Une fois la demande effectuée le compte est créé et on fournit au client un numéro de compte en 6 chiffres et un mot de passe de 4 chiffres généré de façon aléatoire. A la première connexion le client est invité à changer le mot de passe en choisissant un autre mot de passe de 4 chiffres.
 Les mots de passe simples sont proscrits (séquence, exemple : 1111, 0000, 1,2,3,4, et  la date de naissance du client). 
 
-Une fois le mot de passe client changé il peut avoir accès à son compte et son solde et l'historique de ses entrées et sorties (dépôts, dépenses, virement émis et reçu ).
+Une fois le mot de passe client changé il peut avoir accès à son compte et son solde et l'historique de ses entrées et sorties (virement émis et reçu ).
 
-Chaque entrée sortie doit avoir une date et un libellé (dépôt, virement émis sur le compte xxx, achat d'un produit , …).
+Chaque entrée sortie doit avoir une date et un libellé ( virement émis sur le compte xxx, virement reçu de xxx).
 Le client a la possibilité de faire un virement vers un autre compte. Pour ce faire il doit indiquer le numéro de compte du destinataire et son nom et prénom et le montant du virement. Pour que le virement soit accepté il faut que le solde soit supérieur. Une fois le virement ok le solde est mis à jour et le compte destinataire crédité.
 
-Créer également une page où le client peut créditer son compte en entrant le montant.
-Créer une page avec une liste de produits avec des prix différents. Si le client clique sur un produit il peut acheter en renseignant son numéro de compte. Pour que l'achat soit accepté il faut que le solde après l'opération soit positif
+Pour que le virement soit accepté il faut que le solde après l'opération soit positif
+
+Ajouter des logs pour afficher les informations pertinentes et les erreurs éventuelles.
+Ajouter des tests unitaires permettant de vérifier qu'un mot de passe respcte la spécification indiquée.
 
 # Notes
 L'application doit être réalisée avec Struts2, maven, hibernate
